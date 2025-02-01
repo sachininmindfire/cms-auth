@@ -1,0 +1,31 @@
+@CMS.Auth_HostAddress = http://localhost:5272
+
+### Get Weather Forecast
+GET {{CMS.Auth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Register
+POST {{CMS.Auth_HostAddress}}/api/auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "test2",
+  "password": "password!"
+}
+
+###
+
+### Login
+POST {{CMS.Auth_HostAddress}}/api/auth/login?audience=CMS.Service
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "test",
+  "password": "password!"
+}
+
+### Other Auth related actions can be added here
