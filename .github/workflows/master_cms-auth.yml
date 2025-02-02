@@ -41,7 +41,7 @@ jobs:
       - name: Run EF Core Migrations
         env:
             ConnectionStrings__DefaultConnection: ${{ secrets.ConnectionStrings__DefaultConnection }}
-        run: dotnet ef database update --project CMS.Auth --startup-project CMS.Auth
+        run: dotnet ef database update --project CMS.Auth/CMS.Auth.csproj --startup-project CMS.Auth/CMS.Auth.csproj
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
