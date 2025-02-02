@@ -21,4 +21,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".github\workflows\master_cms-auth.yml" />
+  </ItemGroup>
+
 </Project>
