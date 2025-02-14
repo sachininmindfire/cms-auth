@@ -40,6 +40,7 @@ var dbName = builder.Configuration["CMSAuth-DbName"];
 var dbUsername = builder.Configuration["CMSAuth-DbUserName"];
 var dbPassword = builder.Configuration["CMSAuth-DbPassword"];
 
+Console.WriteLine($"Configuration values for {builder.Environment.EnvironmentName}:");
 Console.WriteLine($"dbServer: {dbServer}");
 Console.WriteLine($"dbName: {dbName}");
 Console.WriteLine($"dbUsername: {dbUsername}");
