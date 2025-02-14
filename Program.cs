@@ -40,7 +40,7 @@ var dbName = builder.Configuration["CMSAuth-DbName"];
 var dbUsername = builder.Configuration["CMSAuth-DbUserName"];
 var dbPassword = builder.Configuration["CMSAuth-DbPassword"];
 
-Console.WriteLine($"Configuration values for {builder.Environment.EnvironmentName}:");
+Console.WriteLine($"KeyVault Configuration values for {builder.Environment.EnvironmentName}:");
 Console.WriteLine($"dbServer: {dbServer}");
 Console.WriteLine($"dbName: {dbName}");
 Console.WriteLine($"dbUsername: {dbUsername}");
@@ -51,6 +51,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
     .Replace("{DbName}", dbName)
     .Replace("{DbUsername}", dbUsername)
     .Replace("{DbPassword}", dbPassword);
+
+Console.WriteLine($"Local connectionstring Configuration values for {builder.Environment.EnvironmentName}:");
+Console.WriteLine($"dbServer: {dbServer}");
+Console.WriteLine($"dbName: {dbName}");
+Console.WriteLine($"dbUsername: {dbUsername}");
+Console.WriteLine($"dbPassword: {dbPassword}");
 
 // Configure Entity Framework and Identity
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
