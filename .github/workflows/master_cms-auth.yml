@@ -86,5 +86,9 @@ jobs:
           app-name: 'cms-auth'
           slot-name: 'Production'
           package: .
+          environment-variables: |
+            ASPNETCORE_ENVIRONMENT=Production
+            AZURE_TIMEOUT=300 # 5 minutes
+          
 
           
