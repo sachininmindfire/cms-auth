@@ -37,7 +37,12 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-        
+      
+      - name: Set environment variable
+        env:
+          ASPNETCORE_ENVIRONMENT: Production
+        run: echo "ASPNETCORE_ENVIRONMENT set to $ASPNETCORE_ENVIRONMENT"
+
       - name: Run EF Core Migrations
         env:
             ConnectionStrings__DefaultConnection: ${{ secrets.ConnectionStrings__DefaultConnection }}
