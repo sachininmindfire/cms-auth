@@ -8,7 +8,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-if (builder.Environment.EnvironmentName == "Production")
+//if (builder.Environment.EnvironmentName == "Production")
 {
     // Add Azure Key Vault
     var keyVaultEndpoint = new Uri(builder.Configuration["KeyVault:Endpoint"]);
