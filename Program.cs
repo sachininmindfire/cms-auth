@@ -40,6 +40,11 @@ var dbName = builder.Configuration["CMSAuth-DbName"];
 var dbUsername = builder.Configuration["CMSAuth-DbUserName"];
 var dbPassword = builder.Configuration["CMSAuth-DbPassword"];
 
+Console.WriteLine($"dbServer: {dbServer}");
+Console.WriteLine($"dbName: {dbName}");
+Console.WriteLine($"dbUsername: {dbUsername}");
+Console.WriteLine($"dbPassword: {dbPassword}");
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     .Replace("{DbServer}", dbServer)
     .Replace("{DbName}", dbName)
