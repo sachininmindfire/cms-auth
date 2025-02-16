@@ -8,7 +8,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//if (builder.Environment.EnvironmentName == "Production")
+if (builder.Environment.EnvironmentName == "Production")
 {
     // Add Azure Key Vault
     var keyVaultEndpoint = new Uri(builder.Configuration["KeyVault:Endpoint"]);
@@ -52,11 +52,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
     .Replace("{DbUsername}", dbUsername)
     .Replace("{DbPassword}", dbPassword);
 
-Console.WriteLine($"Local connectionstring Configuration values for {builder.Environment.EnvironmentName}:");
-Console.WriteLine($"dbServer: {dbServer}");
-Console.WriteLine($"dbName: {dbName}");
-Console.WriteLine($"dbUsername: {dbUsername}");
-Console.WriteLine($"dbPassword: {dbPassword}");
+Console.WriteLine($"connectionstring values for {builder.Environment.EnvironmentName}:");
+Console.WriteLine($"connectionString: {connectionString}");
 
 // Configure Entity Framework and Identity
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
