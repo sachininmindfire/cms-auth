@@ -49,7 +49,7 @@ Console.WriteLine($"dbPassword: {dbPassword}");
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     .Replace("{CMSAuth-DbServer}", dbServer)
     .Replace("{CMSAuth-DbName}", dbName)
-    .Replace("{CMSAuth-DbUsername}", dbUsername)
+    .Replace("{CMSAuth-DbUserName}", dbUsername)
     .Replace("{CMSAuth-DbPassword}", dbPassword);
 
 Console.WriteLine($"connectionstring values for {builder.Environment.EnvironmentName}:");
