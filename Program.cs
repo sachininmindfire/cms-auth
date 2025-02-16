@@ -17,7 +17,7 @@ if (builder.Environment.EnvironmentName == "Production")
 
 builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.Production.json", optional: false, reloadOnChange: true)
+    //.AddJsonFile("appsettings.Production.json", optional: false, reloadOnChange: true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
     .AddEnvironmentVariables();
 
@@ -47,10 +47,10 @@ Console.WriteLine($"dbUsername: {dbUsername}");
 Console.WriteLine($"dbPassword: {dbPassword}");
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    .Replace("{DbServer}", dbServer)
-    .Replace("{DbName}", dbName)
-    .Replace("{DbUsername}", dbUsername)
-    .Replace("{DbPassword}", dbPassword);
+    .Replace("{CMSAuth-DbServer}", dbServer)
+    .Replace("{CMSAuth-DbName}", dbName)
+    .Replace("{CMSAuth-DbUsername}", dbUsername)
+    .Replace("{CMSAuth-DbPassword}", dbPassword);
 
 Console.WriteLine($"connectionstring values for {builder.Environment.EnvironmentName}:");
 Console.WriteLine($"connectionString: {connectionString}");
